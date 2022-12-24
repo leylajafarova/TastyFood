@@ -29,7 +29,7 @@ class CartCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        iconImageView.image = UIImage(named: "Image 3")
+        iconImageView.image = UIImage(named: "bin")
         iconImageView.addGestureRecognizer(
             UITapGestureRecognizer(target: self, action: #selector(didSelectRemove))
         )
@@ -37,8 +37,7 @@ class CartCollectionViewCell: UICollectionViewCell {
         layer.borderColor = UIColor.lightGray.cgColor
         layer.borderWidth = 0.4
         layer.cornerRadius = 6
-//        btnDelete.setTitle("Delete", for: .normal)
-//        btnAdd.setTitle("Add", for: .normal)
+
     }
     
     func configure(item: Food?) {
@@ -47,7 +46,8 @@ class CartCollectionViewCell: UICollectionViewCell {
         titleLabel.text = item.name
         titleLabel.font = .boldSystemFont(ofSize: 18)
 //
-        priceLabel.text = "Price(forCount: \(item.orderAmount ?? 0): "
+        priceAmountLabel.text = "Count: \(item.orderAmount ?? 0): "
+        priceLabel.text = "Price"
         priceLabel.font = .systemFont(ofSize: 16, weight: .bold)
         
         priceAmountLabel.text = "\(item.price ?? 0) AZN "

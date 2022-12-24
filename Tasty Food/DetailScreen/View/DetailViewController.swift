@@ -26,7 +26,7 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if let food = food {
-            lblNumber.text = "\(food.orderAmount ?? 0)"
+            lblNumber.text = "\(food.orderAmount ?? 1)"
             lblTitle.text = food.name
             lblSub.text = food.category
             lblPrice.text = "\(food.price ?? 0) AZN"
@@ -37,15 +37,15 @@ class DetailViewController: UIViewController {
     
     @IBAction func counterDidChange(_ sender: UIStepper) {
         print(sender.value)
-        sender.maximumValue = 10
-        sender.minimumValue = 0
+        sender.maximumValue = 20
+        sender.minimumValue = 1
         lblNumber.text = "\(Int(sender.value))"
         food?.orderAmount = Int(sender.value)
        
     }
     @IBAction func addToCart() {
         if let food = food {
-            viewModel.addItem(item: food, count: food.orderAmount ?? 0)
+            viewModel.addItem(item: food, count: food.orderAmount ?? 1)
             dismiss(animated: true)
         }
     }

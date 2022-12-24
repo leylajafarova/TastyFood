@@ -21,12 +21,4 @@ class ListScreenViewModel {
             callback?()
         }
     }
-    
-    func addItem(indexPath: IndexPath, count: Int) {
-//        if let item = foods[indexPath.row] {
-//            repo.addItem(item: item, orderCount: count) { item in
-////                self.fetchCartItems()
-//            }
-//        }
-    }
 }
